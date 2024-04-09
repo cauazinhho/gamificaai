@@ -1,0 +1,241 @@
+/* Utilizando fontes especificas */
+@font-face{
+    font-family: 'Montserrat';
+    src: url(fonts/Montserrat-VariableFont_wght.ttf);
+}
+
+:root{
+    --roxo-gamifica: #47208b;
+    --laranja-gamifica: #f06638;
+}
+
+/* Reset de CSS - Limpa configurações padrão que atrapalham */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.container-grid{
+    width: 80vw;
+    max-width: 1400px;
+
+    margin: 0 auto; 
+    /*margin: 30px - Espaçamento de 30px em torno do elemento*/ 
+    /*margin: 0px 30px - Espaçamento 0px vertical e 30px horizontal*/
+    /*margin: 0px 30px 10px - Espaçamento 0px para cima, 30px horizontal e 10 para baixo*/
+    /*margin: 0px 30px 10px 20px - Espaçamento 0px para cima, 30px para direita, 10px para baixo, 20px para esquerda*/
+}
+
+.banner{
+    /* vh - Porcentagem da ALTURA da viewport (janela) */
+    height: 100vh;
+    background-image: linear-gradient(90deg, rgba(53, 24, 104, 1)0%, rgba(53, 24, 104, 0.8) 100%), url(img/bg-room.png);
+    /*primeiro '90deg' é a angulação, */
+
+    background-repeat: no-repeat;
+    background-position: 165% 40%;
+}
+
+header{
+    height: 165px;
+
+}
+
+header div.container-grid{
+    height: 100%; /*Porcentagem - Unidade relativa ao elemento pai*/
+    
+    display: flex;
+    /*ele é que flexiciona toda caixa do header como exemplo, alinhando eles em linha*/
+    justify-content: space-between;
+    /*ele é que vai justificar os atributos, mandando eles para o começo/meio/fim da pagina*/
+    align-items: center;
+    /*controlando o tamanho aonde os itens deve ficar*/
+}
+
+header img{ /*ex. header com um texto a frente, significa que estou puxando header e oq tem dentro dele*/
+    width: 290px;
+}
+
+.menu{
+    width: 700px;
+    
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.menu a{
+    color: white; /*coloca só color para mudar cor de letras*/
+    font-size: 20px; /*para colocar tamanho de fonte*/
+    font-family: 'Anta';
+    
+    text-decoration: underline transparent;
+    text-decoration-thickness: 2px; /*ele é "stroke do figma"*/
+
+    transition: text-decoration 500ms ease; /*transição de deixar lento quando passa lento por cima*/
+}
+
+.menu a:hover { /*esse hover da cor quando você passa mouse por cima*/
+    text-decoration-color: white;
+}
+
+
+.conteudo-banner{
+    /* Altura deve ser 100vh - altura do header*/
+    /* Coloquei 280px por opção */
+    height: calc(100vh - 280px);
+
+    display: flex;
+    align-items: center;
+}
+
+.conteudo-banner p{
+    color: white;
+    
+    font-family: "Anta"; /*É onde escolhemos a fonte*/
+    font-size: 32px; /*para colocar tamanho de fonte*/
+}
+
+#sobre {
+    height: 800px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    text-align: center;
+    padding: 100px 25%;
+}
+
+h2{
+    font-family: "Anta"; /*É onde escolhemos a fonte*/
+    font-size: 28px; /*para colocar tamanho de fonte*/
+}
+
+#sobre p{
+    font-family: 'Montserrat';
+    font-size: 17px; /*para colocar tamanho de fonte*/
+
+    text-align: left;
+    
+
+}
+
+#cases{
+    text-align: center;
+
+    padding-bottom: 100px;
+    margin-bottom: 100px;
+}
+
+#cases h2{
+    margin-bottom: 70px;
+}
+
+.container-cards{
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.card{
+    height: 400px;
+    width: 250px;
+
+    display: flex;
+    flex-direction: column;  /* Oq deixa tudo em coluna*/
+    justify-content: space-between; /*Oq vai dar o espaçamento*/
+    align-items: center;
+
+    background-color: var(--roxo-gamifica);
+
+    padding: 20px; /*Espaçamento por dentro do conteúdo*/
+    margin-bottom: 20px;
+
+    border-radius: 4px;
+
+
+    box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.5); /* aplicativo do box shadow generation*/
+
+
+}
+
+.card img{
+    height: 55%;
+    width: 100%;
+
+    border-radius: 4px 4px 0 0; /*é oq da borda na ponta da imagem igual do figma*/  
+}
+
+.card p{
+    text-align: left; /*Para alinhar o texto para esquerda*/
+
+    font-family: 'Montserrat';
+    font-size: 16px; /*para colocar tamanho de fonte*/
+
+    padding: 7%;
+
+    color: white;
+}
+
+.card button{
+
+    width: 90%;
+    height: 40px;
+    background-color: var(--laranja-gamifica);
+    
+    border: none;
+    border-radius: 4px;
+    
+    color: white;
+    
+    font-family: 'Montserrat';
+    font-size: 17px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: background-color 500ms;
+}
+
+.card button:hover{
+    background-color: #ad4929;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
