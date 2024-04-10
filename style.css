@@ -208,14 +208,56 @@ h2{
     background-color: #ad4929;
 }
 
+#portfolio{
+    height: 250px;
+    
+    margin-bottom: 120px;
+
+    background-image: url(img/bonecos.png); /*para colocar a imagem de fundo*/
+    background-size: auto; /*para mudar o tamanho da imagem*/
+
+    background-repeat: repeat; /*de repetição de imagem*/
+
+    background-attachment: fixed; /*para fixar a imagem*/
+
+    position: relative; /*position relative vai smp no container pai*/
+}
 
 
+.filtro{
+    height: 100%;
+    width: 100%;
 
+    background-color: #47208bc2;
 
+    position: absolute; /* position absolute vai no item que vc quer mexer */
+    top: 0;
+}
 
+#portfolio .container-grid{
+    height: 100%;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
+    
+}
 
+#portfolio a{
+    width: fit-content; /*ajusta o link da caixa ao conteudo*/
+
+    font-family: 'Anta';
+    font-size: 28px;
+
+    color: white;
+
+    z-index: 1; /*pra posicionar para ir para frente*/
+}
+
+#portfolio a:hover{
+    transform: scale(1.05); /*para dar um pequeno zoom, na letra*/
+}
 
 
 
