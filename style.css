@@ -259,25 +259,124 @@ h2{
     transform: scale(1.05); /*para dar um pequeno zoom, na letra*/
 }
 
+#contato{
+    text-align: center; /*Para centralizar todos os textos*/
+
+    padding-bottom: 100px;
+    margin-bottom: 100px;
+}
+
+#contato h2{
+    margin-top: 70px;
+}
+
+#contato form{ /*que é o quadradão roxo*/
+    width: 50%;
+
+    margin: 0 auto; /*que centraliza o quadrado roxo*/
+    padding: 60px 0;
+
+    border-radius: 80px;
+
+    display: flex;
+    flex-direction: column; /*para ficar os items em coluna, que no caso é um de baixo do outro*/
+    align-items: center;
+
+    background-color: var(--roxo-gamifica);
+
+    color: white;
+    font-family: "Montserrat";
+}
+
+#contato form label{
+    margin-bottom: 15px;
+    font-size: 17px;
+}
+
+.campo {
+    width: 60%;
+
+    margin-bottom: 50px;
+
+    text-align: left;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.campo input{
+    height: 40px;
+
+    color: white;
+    background-color: #351868;  
+    border: none;
+    border-radius: 4px;
+
+    outline: none; /*ele que dar cor quando vc clica com o mouse no botao*/
+
+    text-indent: 10px;
+
+    font-family: "Montserrat";
+    font-size: 17px;
+}
+
+.campo-textarea{
+    width: 60%;
+    margin-bottom: 30px;
+    
+    text-align: left;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+.campo-textarea textarea{
+    color: white;
+    background-color: #351868;
+    
+    border: none;
+    border-radius: 4px ;
+
+    padding: 10px;
+
+    font-family: "Montserrat";
+    font-size: 17px;
+
+    outline: none;
+
+    resize: none;
+}
+
+.campo input:focus, .campo-textarea textarea:focus{ /*para dar cor por seleciona o campo*/
+    outline: 2px solid var(--laranja-gamifica);
+
+}
 
 
+#contato form button{
+    height: 40px;
+    width: 60%;
 
+    font-family: "Montserrat";
+    font-size: 17px;
+    font-weight: 600;
 
+    color: white;
+    background-color: var(--laranja-gamifica);
 
+    border: none;
+    border-radius: 4px;
 
+    cursor: pointer;
 
+    text-transform: uppercase; /*para deixar o texto em caixa alta*/
 
+    transition: background-color 500ms ease; /*é q deixa lento a troca de cor quando passa o curso do mouse*/
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+#contato form button:hover{
+    background-color: #ad4929;
+}
