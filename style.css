@@ -144,7 +144,7 @@ header button{
 }
 
 #sobre {
-    height: 800px;
+    height: 1000px;
 
     display: flex;
     flex-direction: column;
@@ -474,6 +474,15 @@ footer .container-grid{
     color: var(--laranja-gamifica);
 }
 
+/* Java-Script */
+.menu-fechado{
+    display: none;
+}
+
+#icone-barras {
+    display: none;
+}
+
 /*RESPANSIVIDADE PARA CELULAR*/
 
 @media screen and (max-width: 1300px){ /*para adaptar o tamanho do site*/
@@ -614,7 +623,6 @@ footer .container-grid{
     nav.menu{
         width: 100%;
 
-        display: none;
     }
 
     #sobre{
@@ -695,3 +703,7 @@ footer .container-grid{
         width: 200px;
     }
 }
+
+
+/* INICIO MENU HAMBURGUER JS */
+
