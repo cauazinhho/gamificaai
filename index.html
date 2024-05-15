@@ -12,10 +12,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Anta&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script> <!--defer é oq vai executar o script executar em segundo plano, dps do documento de HTML e CSS-->
+    <script src="script.js" defer></script>
+    <!--defer é oq vai executar o script executar em segundo plano, dps do documento de HTML e CSS-->
 </head>
 
-<body>
+<body onload="renderizarCases()">
 
     <!-- INICIO DO MENU HEADER -->
     <div class="banner">
@@ -31,23 +32,48 @@
                     <a href="#contato">Contate-nos</a>
                 </nav>
                 <button onclick="abrirFecharMenu()">
-                    <svg id="icone-barras" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
-                    <svg id="icone-x" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#ffffff" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
+                    <svg id="icone-barras" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path
+                            d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
+                    </svg>
+                    <svg id="icone-x" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path fill="#ffffff"
+                            d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
+                    </svg>
                 </button>
             </div>
         </header>
         <div class="container-grid conteudo-banner">
             <p> GameficaAi:<span>Inovação através da Diversão!</span></p>
-            <button onclick="mostrarAnteriorSlide()" id="botao-anterior"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M9.4 278.6c-12.5-12.5-12.5-32.8 0-45.3l128-128c9.2-9.2 22.9-11.9 34.9-6.9s19.8 16.6 19.8 29.6l0 256c0 12.9-7.8 24.6-19.8 29.6s-25.7 2.2-34.9-6.9l-128-128z"/></svg></button>
-            <button onclick="mostrarProximoSlide() "id="botao-proximo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z"/></svg></button>
-        
+            <button onclick="mostrarAnteriorSlide()" id="botao-anterior"><svg xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 256 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                    <path
+                        d="M9.4 278.6c-12.5-12.5-12.5-32.8 0-45.3l128-128c9.2-9.2 22.9-11.9 34.9-6.9s19.8 16.6 19.8 29.6l0 256c0 12.9-7.8 24.6-19.8 29.6s-25.7 2.2-34.9-6.9l-128-128z" />
+                </svg></button>
+            <button onclick="mostrarProximoSlide() " id="botao-proximo"><svg xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 256 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                    <path
+                        d="M246.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-9.2-9.2-22.9-11.9-34.9-6.9s-19.8 16.6-19.8 29.6l0 256c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l128-128z" />
+                </svg></button>
+
             <div class="botoes">
-                <button><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z"/></svg></button>
-                <button><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z"/></svg></button>
-                <button><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z"/></svg></button>
-                
+                <button onclick="selecionarSlide(0)"><svg xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z" />
+                    </svg></button>
+                <button onclick="selecionarSlide(1)"><svg xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z" />
+                    </svg></button>
+                <button onclick="selecionarSlide(2)"><svg xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z" />
+                    </svg></button>
+
             </div>
-        
+
         </div>
 
     </div>
@@ -78,27 +104,9 @@
     <section class="container-grid" id="cases">
         <h2>Cases de Sucesso</h2>
 
-        <div class="container-cards">
-            <div class="card">
-                <img src="https://unsplash.it/640/425" alt="">
-                <p>Reduzimos o desperdício de comida em uma escola em 80%</p>
-                <button>Ver mais</button>
-            </div>
-            <div class="card">
-                <img src="https://unsplash.it/640/425" alt="">
-                <p>Reduzimos o desperdício de comida em uma escola em 80%</p>
-                <button>Ver mais</button>
-            </div>
-            <div class="card">
-                <img src="https://unsplash.it/640/425" alt="">
-                <p>Reduzimos o desperdício de comida em uma escola em 80%</p>
-                <button>Ver mais</button>
-            </div>
-            <div class="card">
-                <img src="https://unsplash.it/640/425" alt="">
-                <p>Reduzimos o desperdício de comida em uma escola em 80%</p>
-                <button>Ver mais</button>
-            </div>
+        <div id="lista-cards" class="container-cards">
+           
+
         </div>
     </section>
     <!-- FIM DO CASES DE SUCESSO -->
@@ -123,7 +131,7 @@
                 <input id="campo-nome" type="text" placeholder="Digite seu nome...">
                 <!--input é que faz dados do formulario chegar em voce-->
             </div>
-            
+
             <div class="campo">
                 <label for="campo-email">Em qual email podemos te responder?</label>
                 <input id="campo-email" type="email" placeholder="Digite seu email...">
