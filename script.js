@@ -94,25 +94,7 @@ const selecionarSlide = (indiceSlide) => {
 }
 
 let listaCases = [
-    {
-        imagem: "https://unsplash.it/600/400?image=40",
-        descricao: "Uma empresa de tecnologia lança um desafio de gamificação onde os funcionarios devem propor e implementar ideias inovadoras."
-    },
-
-    {
-        imagem: "https://unsplash.it/600/400?image=32",
-        descricao: "Uma empresa de consultoria cria uma narrativa interrativa de gamificação para seu programa de treinamento."
-    },
-
-    {
-        imagem: "https://unsplash.it/600/400?image=64",
-        descricao: "Uma empresa de vendas implementa uma competição gamificada entre equipes que competem pelo topo do ranking"
-    },
-
-    {
-        imagem: "https://unsplash.it/600/400?image=8",
-        descricao: "Uma empresa de saúde promove o bem-estar dos funcionarios atravez de um desafio de gamificação de condicionamento físico"
-    }
+    
 ]
 
 const renderizarCases = () => {
@@ -131,3 +113,51 @@ const renderizarCases = () => {
 
     elementoLista.innerHTML = template
 }
+
+const carregarCases = () => {
+    fetch("http://localhost:3000/cases")
+    .then( resposta => resposta.json() )
+    .then( (dados) => {
+        listaCases = dados
+        renderizarCases()
+    })
+    .catch(erro => console.error(erro))
+}
+
+////////////////////////////////////////////////////////////////////////////////////
+
+//API do formulario
+
+
+const solicitarOrcamento = () => {
+    // Pegar valores do inputs
+    let valorNome = document.getElementById("campo-nome").value
+    let valorEmail = document.getElementById("campo-email").value
+    let valorDescricao = document.getElementById("campo-descricao").value
+
+    // Organizar objeto com os valores
+    let dadosForm = {
+        nome: valorNome,
+        email: valorEmail,
+        descricao: valorDescricao
+    }
+
+    // Enviar requisição para a api
+    //127.0.0.1 -> localhost
+    //Método HTTP POST - Create -> Cadastrar ou Criar
+    fetch("http://127.0.0.1:3000/solicitacoes", {
+    method: "POST", 
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify(dadosForm)
+    })
+    .then(resposta => console.log(resposta))
+    .catch(erro => console.error(erro)) //caso tenha erro
+
+        // Limpar os campos
+        //Mostrar alert com msg de sucesso
+        //CASO ERRO - alert com msg de erro
+}
+
+
