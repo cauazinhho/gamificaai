@@ -129,7 +129,7 @@ const carregarCases = () => {
 //API do formulario
 
 
-const solicitarOrcamento = () => {
+const solicitarOrcamento = (event) => {
     // Pegar valores do inputs
     let valorNome = document.getElementById("campo-nome").value
     let valorEmail = document.getElementById("campo-email").value
@@ -152,12 +152,23 @@ const solicitarOrcamento = () => {
     },
     body: JSON.stringify(dadosForm)
     })
-    .then(resposta => console.log(resposta))
-    .catch(erro => console.error(erro)) //caso tenha erro
+    .then(resposta => { 
+        console.log(resposta)
 
-        // Limpar os campos
+        //Limpar os campos (inputs)
+        document.querySelector("#contato form").reset()
+
         //Mostrar alert com msg de sucesso
+        alert("Solicitação cadastrada")
+    })
+    .catch(erro => 
         //CASO ERRO - alert com msg de erro
+        {console.error(erro)
+        alert("Erro desconhecido")
+    }) //caso tenha erro
+    
+    event.preventDefault()
+    
 }
 
 
